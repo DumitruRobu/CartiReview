@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -27,17 +27,18 @@
                 @auth
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/"> &larr; Home</a>
+                    <ul class="navbar-nav me-auto" id="auto">
+                        <li class="nav-item firstNavItem" >
+                            <a class="nav-link firstNavLink" href="/"> &larr; Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('ShowBooks')}}"> View all books </a>
+                            <a class="nav-link" href="{{route('ShowBooks')}}"><i class="fa-solid fa-book"></i> View all books </a>
                         </li>
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('CreateBooks')}}"> Add a new book </a>
+                            <a class="nav-link" href="{{route('CreateBooks')}}"><i class="fa-solid fa-plus"></i> Add a new book </a>
+
                         </li>
                     </ul>
 
@@ -62,11 +63,14 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa-regular fa-user"></i>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -90,7 +94,7 @@
     </div>
 
     <div id="copyright">
-        <p>© by Dumitru Robu, 2023</p>
+        <p>© by Dumitru Robu, 2023 </p>
     </div>
 </body>
 </html>

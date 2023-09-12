@@ -130,6 +130,7 @@ body{
     height: 30vh;
     margin: 0;
     object-fit: cover;
+    border-radius:5px;
 
 }
 
@@ -204,4 +205,22 @@ body{
     text-align: center;
     font-size: 9px;
     font-family: Verdana;
+}
+
+.nav-item:hover{
+    border-radius:10px;
+    background-color: rgb(194,194,194);
+
+}
+
+@media screen and (min-width: 768px){
+    #navbarSupportedContent{
+        margin-left: 100px;
+    }
+
+}
+#auto{
+    display:flex;
+    flex-direction: row;
+    gap:50px;
 }

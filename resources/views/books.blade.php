@@ -2,6 +2,7 @@
 
 @section("content")
     <div id="mainDiv">
+
         @foreach($carti as $c)
             <a href="{{route("ShowBook", ["id"=>$c->id])}}">
             <div id="bookItem">

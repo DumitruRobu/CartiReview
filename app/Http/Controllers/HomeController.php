@@ -23,6 +23,8 @@ class HomeController extends BaseController
      */
     public function index()
     {
-        return view('home');
+        $nume = auth()->user()->name;
+
+        return view('home', compact("nume"));
     }
 }

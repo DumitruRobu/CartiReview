@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::group(['namespace' => 'App\Http\Controllers\AllControllers'], function() {
-    Route::get('/', "HomePageController")->name("HomePage");
+Route::get('/', "App\Http\Controllers\AllControllers\HomePageController")->name("HomePage");
+Route::group(['namespace' => 'App\Http\Controllers\AllControllers',  'middleware'=>'users'], function() {
+
     Route::get('/books', "ShowBooksController")->name("ShowBooks");
     Route::get('/books/create', "CreateBooksController")->name("CreateBooks");
     Route::post('/books', "StoreController")->name("StoreBooks");

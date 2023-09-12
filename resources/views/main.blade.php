@@ -5,7 +5,9 @@
         <p>Welcome to our online book review website, where
            all your favorite books, are in one place!
         For a better experience, please consider to
-            <a href="/login"> log in </a>  or <a href="/register"> register</a>! </p>
+            <a href="/login"> log in </a>  or <a href="/register"> register</a>!<br>
+        Already logged in? Find your book <a href="{{route('ShowBooks')}}"> here</a>!
+        </p>
 
         <div class="gallery">
             <div id="prima" class="imgg"> <img src="https://images.unsplash.com/photo-1599056377758-4808a7e70337?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2066&q=80"> </div>
