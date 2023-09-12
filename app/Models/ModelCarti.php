@@ -16,4 +16,8 @@ class ModelCarti extends Model
     public function genre(){
         return $this->belongsTo(ModelGenre::class,  "gen_id", "id");
     }
+
+    public function reviews(){
+        return $this->belongsTo(ModelReviews::class,  "carte_id", "id");
+    }
 }

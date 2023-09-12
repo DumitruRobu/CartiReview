@@ -88,5 +88,9 @@
             @yield('content')
         </main>
     </div>
+
+    <div id="copyright">
+        <p>© by Dumitru Robu, 2023</p>
+    </div>
 </body>
 </html>

@@ -9,29 +9,24 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 
-class StoreController extends BaseController
+class StoreReviewController extends BaseController
 {
     public function __invoke()
     {
         // Validate the incoming request data
         $data = request()->validate([
-            'titlu' => 'required|string',
-            'autor' => 'required|string',
-            'gen_id' => 'required|numeric',
-            'imagine' => 'required|string',
-            'descriere'=>'required|string',
             'recenzie'=>'required',
+            'idulCartii'=>'numeric'
         ]);
 
         $recenzia = $data['recenzie'];
-        unset($data['recenzie']);
-        $newBook = ModelCarti::firstOrCreate($data);
+        $cartea = $data['idulCartii'];
 
         $semnatura = Auth::user();
         $semnaturaNume = $semnatura['name'];
 
         ModelReviews::firstOrCreate([
-            "carte_id"=>$newBook->id,
+            "carte_id"=> $cartea,
             "recenzie"=>$recenzia,
             "semnatura"=>$semnaturaNume
         ]);

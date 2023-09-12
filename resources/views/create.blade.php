@@ -14,8 +14,13 @@
         @enderror
 
     <!-- Correct the placeholder and formatting of the <textarea> element -->
-        <textarea name="descriere" placeholder="Descrierea cartii">{!! old('descriere') !!}</textarea>
+        <textarea name="descriere" placeholder="Descrierea cartii (Editura, Pagini, Anul Publicarii)">{!! old('descriere') !!}</textarea>
         @error('descriere')
+        <p class="text-bg-danger">*{{ $message }}</p>
+        @enderror
+
+        <textarea name="recenzie" placeholder="Recenzie">{!! old('recenzie') !!}</textarea>
+        @error('recenzie')
         <p class="text-bg-danger">*{{ $message }}</p>
         @enderror
 

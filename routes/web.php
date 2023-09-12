@@ -22,7 +22,8 @@ Route::group(['namespace' => 'App\Http\Controllers\AllControllers'], function() 
     Route::get('/books/{id}/edit', "EditBookController")->name("EditBook");
     Route::patch('/books/{id}', "UpdateBookController")->name("UpdateBook");
     Route::delete('/books/{id}', "DeleteBookController")->name("DeleteBook");
-
+    Route::get('/adaugamReview/{id}', "AddReviewController")->name("AddReview");
+    Route::post('/adaugamReview', "StoreReviewController")->name("StoreReview");
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, "index"])->name("MainController.main");
 
