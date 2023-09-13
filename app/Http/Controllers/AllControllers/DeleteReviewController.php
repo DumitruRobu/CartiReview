@@ -14,13 +14,10 @@ class DeleteReviewController extends BaseController
         $reviewToDelete = ModelReviews::findOrFail($id);
         $reviewToDelete->delete();
 
-//        $idulCartii = request('idulCartii');
-//        $book = ModelCarti::findOrFail($idulCartii);
-//        $genulCartii = $book->genre->gen;
-//        $reviews = ModelReviews::where("carte_id", $id)->get();
-//        return view("/main", compact("book", "genulCartii", "reviews"));
-        $carti = ModelCarti::all();
-        return view("/books", compact("carti"));
-
+        $idulCartii = request('idulCartii');
+        $book = ModelCarti::findOrFail($idulCartii);
+        $genulCartii = $book->genre->gen;
+        $reviews = ModelReviews::where("carte_id", $book->id)->get();
+        return view("/book", compact("book", "genulCartii", "reviews"));
     }
 }
