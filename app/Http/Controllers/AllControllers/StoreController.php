@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\AllControllers;
 
+use App\Http\Requests\AllControllers\StoreRequest;
 use App\Models\ModelCarti;
 use App\Models\ModelGenre;
 use App\Models\ModelReviews;
@@ -11,17 +12,10 @@ use Illuminate\Support\Facades\Auth;
 
 class StoreController extends BaseController
 {
-    public function __invoke()
+    public function __invoke(StoreRequest $request)
     {
         // Validate the incoming request data
-        $data = request()->validate([
-            'titlu' => 'required|string',
-            'autor' => 'required|string',
-            'gen_id' => 'required|numeric',
-            'imagine' => 'required|string',
-            'descriere'=>'required|string',
-            'recenzie'=>'required',
-        ]);
+        $data = $request->validated();
 
         $recenzia = $data['recenzie'];
         unset($data['recenzie']);
@@ -36,7 +30,10 @@ class StoreController extends BaseController
             "semnatura"=>$semnaturaNume
         ]);
 
-        $carti = ModelCarti::all();
-        return view("/main", compact("carti"));
+
+        $book = ModelCarti::where("id", $newBook->id)->first();
+        $genulCartii = $book->genre->gen;
+        $reviews = ModelReviews::where("carte_id", $book->id)->get();
+        return view("/book", compact("book", "genulCartii", "reviews"));
     }
 }

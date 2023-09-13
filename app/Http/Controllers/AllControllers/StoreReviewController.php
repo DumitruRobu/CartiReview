@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\AllControllers;
 
+
+use App\Http\Requests\AllControllers\StoreReviewRequest;
 use App\Models\ModelCarti;
 use App\Models\ModelGenre;
 use App\Models\ModelReviews;
@@ -11,13 +13,10 @@ use Illuminate\Support\Facades\Auth;
 
 class StoreReviewController extends BaseController
 {
-    public function __invoke()
+    public function __invoke(StoreReviewRequest $request)
     {
         // Validate the incoming request data
-        $data = request()->validate([
-            'recenzie'=>'required',
-            'idulCartii'=>'numeric'
-        ]);
+        $data = $request->validated();
 
         $recenzia = $data['recenzie'];
         $cartea = $data['idulCartii'];
