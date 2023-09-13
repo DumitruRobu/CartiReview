@@ -11,32 +11,49 @@
                 <p><b>Autor:</b> {{$book->autor}}</p>
                 <p><b>Gen: </b>{{$genulCartii}}</p>
                 <p><b>Descriere:</b> {{$book->descriere}}</p>
+
+                <div id="editSauDelete">
+                    <a href="{{route('EditBook', ['id'=> $book->id])}}"><button id="butonBook">Editeaza cartea</button></a>
+                    <form action="{{route('DeleteBook', ['id'=> $book->id])}}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                        <button id="butonBook">Sterge cartea</button>
+                    </form>
+                    <a href="{{ route("AddReview", ["id" => $book->id]) }}">
+                        <button id="butonBook">Adauga o recenzie</button>
+                    </a>
+                </div>
             </div>
+
+
 
         </div>
 
+
+
         <h3>Recenzii:</h3>
-        <div>
+        <div id="recenzieDiv">
             @foreach($reviews as $r)
-                <br>
-                <span><b><i>"{{$r->recenzie}}"</i></b></span><br>
-                <span>semnat, <b>{{$r->semnatura}}</b></span><br>
-                <br>
+                <div id="recenzie">
+                    <span><b><i>"{{$r->recenzie}}"</i></b></span><br>
+                    <span>semnat, <b>{{$r->semnatura}}</b></span><br>
+
+{{--///////////////////////////////--}}
+                    @can('view', auth()->user())
+                    <form action="{{route('DeleteReview', ['id'=> $r->id])}}" method="POST">
+                        @csrf
+                        @method("DELETE")
+
+                        <button id="deleteButton"><i class="fa-solid fa-trash"></i> Sterge recenzie</button>
+                        <input type="hidden" value="{{$book->id}}" name="idulCartii">
+                    </form>
+                        @endcan
+                </div>
             @endforeach
         </div>
 
 
-        <div id="editSauDelete">
-            <button><a href="{{route('EditBook', ['id'=> $book->id])}}">Edit</a></button>
-            <form action="{{route('DeleteBook', ['id'=> $book->id])}}" method="POST">
-                @csrf
-                @method("DELETE")
-                <button>Delete</button>
-            </form>
-            <a href="{{ route("AddReview", ["id" => $book->id]) }}">
-                <button>Add a Review</button>
-            </a>
-        </div>
+
 
     </div>
 

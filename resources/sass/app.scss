@@ -92,10 +92,10 @@ body{
 
 #copertaSiInfo{
     display:flex;
-    p{
+    p, div{
         font-size: 20px;
         margin-left: 10px;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
     margin-bottom: 15px;
 }
@@ -223,4 +223,37 @@ body{
     display:flex;
     flex-direction: row;
     gap:50px;
+}
+
+#recenzieDiv{
+
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    #recenzie{
+        background-color: beige;
+        border-radius: 10px;
+        padding: 10px;
+
+    }
+}
+
+#butonBook{
+    padding: 6px;
+    background-color: rgb(207,179,138);
+    border-radius: 5px;
+    &:hover{
+        background-color: rgb(245,245,220);
+    }
+    &:active{
+        transform: translateY(3px);
+    }
+}
+#deleteButton{
+    background-color: palevioletred;
+    border-radius: 5px;
+    padding: 4px;
+    &:hover{
+        background-color: orangered;
+    }
 }

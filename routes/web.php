@@ -25,7 +25,12 @@ Route::group(['namespace' => 'App\Http\Controllers\AllControllers',  'middleware
     Route::delete('/books/{id}', "DeleteBookController")->name("DeleteBook");
     Route::get('/adaugamReview/{id}', "AddReviewController")->name("AddReview");
     Route::post('/adaugamReview', "StoreReviewController")->name("StoreReview");
+
 });
+Route::group(['namespace' => 'App\Http\Controllers\AllControllers',  'middleware'=>'admin'], function() {
+    Route::delete('/deleteReview/{id}', "DeleteReviewController")->name("DeleteReview");
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, "index"])->name("MainController.main");
 
 Auth::routes();

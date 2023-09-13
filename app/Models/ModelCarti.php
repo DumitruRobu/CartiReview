@@ -12,7 +12,7 @@ class ModelCarti extends Model
     protected $table = "carti";
     protected $guarded = false;
     public $timestamps=false;
-
+    use SoftDeletes;
     public function genre(){
         return $this->belongsTo(ModelGenre::class,  "gen_id", "id");
     }
