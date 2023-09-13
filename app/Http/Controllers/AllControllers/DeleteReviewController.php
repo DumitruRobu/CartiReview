@@ -5,7 +5,6 @@ namespace App\Http\Controllers\AllControllers;
 use App\Models\ModelCarti;
 use App\Models\ModelReviews;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 
 class DeleteReviewController extends BaseController
 {

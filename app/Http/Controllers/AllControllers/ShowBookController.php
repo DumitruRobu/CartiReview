@@ -6,7 +6,6 @@ use App\Models\ModelCarti;
 use App\Models\ModelGenre;
 use App\Models\ModelReviews;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 
 class ShowBookController extends BaseController
 {
