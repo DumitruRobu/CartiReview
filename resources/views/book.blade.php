@@ -47,13 +47,11 @@
                         <button id="deleteButton"><i class="fa-solid fa-trash"></i> Sterge recenzie</button>
                         <input type="hidden" value="{{$book->id}}" name="idulCartii">
                     </form>
-                        @endcan
+                    @endcan
+
                 </div>
             @endforeach
         </div>
-
-
-
 
     </div>
 

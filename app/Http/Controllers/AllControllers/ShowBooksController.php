@@ -10,7 +10,8 @@ class ShowBooksController extends BaseController
 {
     public function __invoke()
     {
-        $carti = ModelCarti::paginate(10);
+        $query = ModelCarti::query();
+        $carti = $query->paginate($this->itemsPerpage);
         return view("/books", compact("carti"));
     }
 }
