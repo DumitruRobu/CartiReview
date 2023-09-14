@@ -10,7 +10,7 @@ class ShowBooksController extends BaseController
 {
     public function __invoke()
     {
-        $carti = ModelCarti::all();
+        $carti = ModelCarti::paginate(10);
         return view("/books", compact("carti"));
     }
 }

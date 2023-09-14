@@ -32,9 +32,5 @@ Route::group(['namespace' => 'App\Http\Controllers\AllControllers',  'middleware
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, "index"])->name("MainController.main");
-
 Auth::routes();
-
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

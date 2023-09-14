@@ -15,7 +15,6 @@ class StoreReviewController extends BaseController
 {
     public function __invoke(StoreReviewRequest $request)
     {
-        // Validate the incoming request data
         $data = $request->validated();
 
         //Executam adaugarea reviewului in service!

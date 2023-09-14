@@ -257,3 +257,27 @@ body{
         background-color: orangered;
     }
 }
+
+#pagination{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+
+    //Coloram cu albastru nr culorii actuale a paginii
+    li {
+        span{
+            color:blue;
+        }
+    }
+
+    a,span{
+        font-size: 25px;
+        background-color: transparent;
+        border:none;
+        color: black;
+
+        &:hover{
+            color:blue;
+        }
+    }
+}
