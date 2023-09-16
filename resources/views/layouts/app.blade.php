@@ -17,14 +17,14 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+<div id="app">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <div class="container">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                @auth
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @auth
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto" id="auto">
@@ -40,13 +40,24 @@
                             <a class="nav-link" href="{{route('CreateBooks')}}"><i class="fa-solid fa-plus"></i> Add a new book </a>
 
                         </li>
+
+                        <li class="nav-item">
+                            <form action="{{ route('ShowBooks') }}" method="GET" id="forrrrm">
+                                <div class="form-group">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" name="titlu" id="searchInput" placeholder="Cauta dupa titlu..."  >
+
+                                    <button id="searchButton" type="submit">Search</button>
+                                </div>
+                            </form>
+                        </li>
                     </ul>
 
 
 
-                        @endauth
+                @endauth
 
-                    <!-- Right Side Of Navbar -->
+                <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
@@ -85,16 +96,16 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
-        </nav>
+        </div>
+    </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
+</div>
 
-    <div id="copyright">
-        <p>© by Dumitru Robu, 2023 </p>
-    </div>
+<div id="copyright">
+    <p>© by Dumitru Robu, 2023 </p>
+</div>
 </body>
 </html>

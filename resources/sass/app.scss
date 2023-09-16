@@ -207,23 +207,31 @@ body{
     font-family: Verdana;
 }
 
-.nav-item:hover{
-    border-radius:10px;
-    background-color: rgb(194,194,194);
 
-}
+
+
 
 @media screen and (min-width: 768px){
     #navbarSupportedContent{
         margin-left: 100px;
     }
+    #auto{
+        display:flex;
+        gap:40px;
 
+    }
 }
+
 #auto{
     display:flex;
-    flex-direction: row;
-    gap:50px;
+    gap:40px;
+
 }
+//#forrrrm{
+//    margin-right:-30%;
+//    background-color: red;
+//}
+
 
 #recenzieDiv{
 
@@ -281,3 +289,77 @@ body{
         }
     }
 }
+
+.form-group{
+    input{
+        outline:none;
+
+    }
+    button{
+        outline:none;
+        border-radius: 5px;
+        border: none;
+    }
+}
+
+#forrrrm{
+    transform: translateY(7px);
+}
+
+//////steregeeee
+
+@media screen and (min-width: 1400px){
+    #forrrrm{
+        margin-left: 140px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .container{
+        max-width: 900px;
+    }
+    #auto{
+        display:flex;
+        gap:10px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .container{
+        max-width: 1000px;
+    }
+    #auto{
+        display:flex;
+        gap:0px;
+    }
+}
+
+
+
+
+//////steregeeeeeee
+
+
+
+
+
+
+#searchInput{
+    border-radius: 5px;
+    outline:none;
+    border:none;
+    &:hover{
+        background-color: gainsboro;
+    }
+}
+#searchButton{
+    &:hover{
+        background-color: #595959;
+    }
+    &:active{
+        transform: translateY(3px);
+    }
+}
+
+
+

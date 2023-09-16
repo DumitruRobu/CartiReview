@@ -15,8 +15,12 @@
             @endforeach
     </div>
 
-        <div id="pagination">
-            {{$carti->links()}}
-        </div>
+{{--        <div id="pagination">--}}
+{{--            {{$carti->links()}}--}}
+{{--        </div>--}}
+
+    <div id="pagination">
+        {{ $carti->appends(request()->input())->links() }}
+    </div>
 
 @endsection
