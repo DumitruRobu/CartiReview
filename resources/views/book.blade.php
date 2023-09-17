@@ -12,17 +12,23 @@
                 <p><b>Gen: </b>{{$genulCartii}}</p>
                 <p><b>Descriere:</b> {{$book->descriere}}</p>
 
+
                 <div id="editSauDelete">
-                    <a href="{{route('EditBook', ['id'=> $book->id])}}"><button id="butonBook">Editeaza cartea</button></a>
+
+                    @can('view', auth()->user())
+                    <a href="{{route('EditBook', ['id'=> $book->id])}}"><button id="butonBook">Modifică detalii carte</button></a>
                     <form action="{{route('DeleteBook', ['id'=> $book->id])}}" method="POST">
                         @csrf
                         @method("DELETE")
                         <button id="butonBook">Sterge cartea</button>
                     </form>
+                    @endcan
                     <a href="{{ route("AddReview", ["id" => $book->id]) }}">
-                        <button id="butonBook">Adauga o recenzie</button>
+                        <button id="butonBook">Adaugă o recenzie</button>
                     </a>
                 </div>
+
+
             </div>
 
 

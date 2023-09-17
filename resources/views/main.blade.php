@@ -2,11 +2,10 @@
 
 @section("content")
     <div id="container">
-        <p>Welcome to our online book review website, where
-           all your favorite books, are in one place!
-        For a better experience, please consider to
-            <a href="/login"> log in </a>  or <a href="/register"> register</a>!<br>
-        Already logged in? Find your book <a href="{{route('ShowBooks')}}"> here</a>!
+        <p>Welcome to our online book review website. You can
+        view all the book reviews <a href="{{route('ShowBooks')}}"> here</a>.
+        Please <a href="/register"> register </a> or <a href="/login"> log in </a>
+        if you want to leave your personal review!<br>
         </p>
 
         <div class="gallery">

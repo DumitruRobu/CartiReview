@@ -11,6 +11,7 @@ class StoreController extends BaseController
     public function __invoke(StoreRequest $request)
     {
         // Validate the incoming request data
+
         $data = $request->validated();
 
         // Folosesc metoda store din serviciu

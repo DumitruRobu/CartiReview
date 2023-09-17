@@ -23,4 +23,10 @@
         {{ $carti->appends(request()->input())->links() }}
     </div>
 
+    <div id="solicitaCarte">
+        <p>Nu ai găsit cartea ta? Solicită adăugarea ei
+            <a href="{{route('SolicitAdaugare')}}">aici! </a>  </p>
+    </div>
+
+
 @endsection

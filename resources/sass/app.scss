@@ -7,17 +7,12 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-#bookItem img{
-    width: 170px;
-    margin-top: 15px;
 
-
-}
 a{
     text-decoration: none;
 }
 #bookItem {
-    background-color: rgb(207,179,138);
+    //background-color: rgb(132,103,74);
 
     width: 250px;
     height: 320px;
@@ -28,11 +23,20 @@ a{
     justify-content: center;
     align-items: center;
     text-align: center;
+    img{
+        width: 170px;
+        margin-top: 15px;
+        border-radius: 10px;
+        &:hover{
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+        }
+    }
 
 
 }
 #bookItem:hover{
-    background-color: rgb(95,77,51);
+    //background-color: rgb(95,77,51);
 }
 #mainDiv{
 
@@ -77,7 +81,7 @@ a{
 
 }
 body{
-    background-color: rgb(132,103,74);
+    background-color: rgb(75,108,93)   ;
 }
 
 #booksInfo {
@@ -93,7 +97,7 @@ body{
 #copertaSiInfo{
     display:flex;
     p, div{
-        font-size: 20px;
+        font-size: 15px;
         margin-left: 10px;
         margin-bottom: 30px;
     }
@@ -103,6 +107,9 @@ body{
 #editSauDelete{
     display:flex;
     gap: 15px;
+    button{
+        border:none;
+    }
 }
 
 
@@ -291,6 +298,7 @@ body{
 }
 
 .form-group{
+
     input{
         outline:none;
 
@@ -326,7 +334,7 @@ body{
 
 @media screen and (min-width: 992px){
     .container{
-        max-width: 1000px;
+        max-width: 1300px;
     }
     #auto{
         display:flex;
@@ -361,5 +369,55 @@ body{
     }
 }
 
+#solicitaCarte{
+    display:flex;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    a{
+        color: blue;
+    &:hover{
+        color:white;
+    }
+    }
+}
+#booksToAddDiv{
+    background-color: rgb(90 131 131);
+    display:flex;
+    color:white;
+    width: 80%;
 
-
+    img{
+        width: 150px;
+    }
+    #detaliiCerereAdaugare{
+        margin-left: 10px;
+        button{
+            outline:none;
+            border:none;
+            border-radius: 3px;
+            padding: 5px;
+            &:hover{
+                background-color: rgb(75,108,93);
+                color:white;
+                border: 1px solid white;
+            }
+            &:active{
+                transform: translateY(3px);
+            }
+        }
+        #stergeCerereButon{
+            background-color: palevioletred;
+            margin: 5px;
+            &:hover{
+                background-color: #c75345;
+            }
+        }
+    }
+}
+#mainDivVizualizamCereriAdaugare{
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 10px;
+}

@@ -4,16 +4,16 @@ namespace App\Http\Controllers\AllControllers;
 
 use App\Http\Requests\AllControllers\FilterRequest;
 use App\Models\ModelCarti;
+use App\Models\ModelSolicitaAdaugare;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ShowBooksController extends BaseController
+class ShowSolicitaAdaugareController extends BaseController
 {
     public function __invoke(FilterRequest $request)
     {
 //        $data=$request->validated();
-
-        $query = ModelCarti::query();
+        $query = ModelSolicitaAdaugare::query();
 
         if ($request->has('titlu')) {
             $query->where('titlu', 'like', '%' . $request->input('titlu') . '%')
@@ -21,6 +21,6 @@ class ShowBooksController extends BaseController
         }
 
         $carti = $query->paginate($this->itemsPerpage);
-        return view("/books", compact("carti"));
+        return view("/vizualizamCereriAdaugare", compact("carti"));
     }
 }

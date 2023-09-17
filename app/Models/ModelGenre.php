@@ -16,4 +16,8 @@ class ModelGenre extends Model
     public function carti(){
         return $this->hasMany(ModelCarti::class,  "gen_id", "id");
     }
+
+    public function solicitaAdaugare(){
+        return $this->hasMany(ModelSolicitaAdaugare::class,  "gen_id", "id");
+    }
 }

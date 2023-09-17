@@ -24,7 +24,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            @auth
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto" id="auto">
@@ -35,17 +35,23 @@
                             <a class="nav-link" href="{{route('ShowBooks')}}"><i class="fa-solid fa-book"></i> View all books </a>
                         </li>
 
-
+                        @can('view', auth()->user())
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('CreateBooks')}}"><i class="fa-solid fa-plus"></i> Add a new book </a>
 
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link" href="{{route('ShowSolicitaAdaugare')}}"><i class="fa-solid fa-hands-praying"></i> View users' requests</a>
+                        </li>
+                        @endcan
+
+
+                        <li class="nav-item">
                             <form action="{{ route('ShowBooks') }}" method="GET" id="forrrrm">
                                 <div class="form-group">
                                     <i class="fas fa-search"></i>
-                                    <input type="text" name="titlu" id="searchInput" placeholder="Cauta dupa titlu..."  >
+                                    <input type="text" name="titlu" id="searchInput" placeholder="Caută după titlu/autor..."  >
 
                                     <button id="searchButton" type="submit">Search</button>
                                 </div>
@@ -55,7 +61,7 @@
 
 
 
-                @endauth
+
 
                 <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -103,6 +109,7 @@
         @yield('content')
     </main>
 </div>
+
 
 <div id="copyright">
     <p>© by Dumitru Robu, 2023 </p>
