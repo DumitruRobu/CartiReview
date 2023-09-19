@@ -6,6 +6,7 @@ use App\Models\ModelCarti;
 use App\Models\ModelGenre;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Gate;
 
 class CreateBooksController extends BaseController
 {

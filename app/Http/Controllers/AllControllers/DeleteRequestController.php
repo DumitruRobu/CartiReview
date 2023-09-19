@@ -14,7 +14,6 @@ class DeleteRequestController extends BaseController
         $requestToDelete = ModelSolicitaAdaugare::findOrFail($id);
         $requestToDelete->delete();
 
-
-        return view("/main");
+        return redirect()->route("ShowSolicitaAdaugare");
     }
 }

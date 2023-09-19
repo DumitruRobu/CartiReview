@@ -42,8 +42,6 @@
     </div>
 
 
-    <div id="pagination">
-        {{ $carti->appends(request()->input())->links() }}
-    </div>
+
 
 @endsection

@@ -16,9 +16,10 @@ class AdminPanelMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->user()->role !== 'admin'){
-            return redirect(route('ShowBooks'));
+        if(auth()->user() && auth()->user()->role === 'admin'){
+            return $next($request);
         }
-        return $next($request);
+
+        return redirect(route('ShowBooks'));
     }
 }

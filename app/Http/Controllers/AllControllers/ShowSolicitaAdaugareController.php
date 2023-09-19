@@ -10,17 +10,9 @@ use Illuminate\Support\Facades\Auth;
 
 class ShowSolicitaAdaugareController extends BaseController
 {
-    public function __invoke(FilterRequest $request)
+    public function __invoke()
     {
-//        $data=$request->validated();
-        $query = ModelSolicitaAdaugare::query();
-
-        if ($request->has('titlu')) {
-            $query->where('titlu', 'like', '%' . $request->input('titlu') . '%')
-                ->orWhere('autor', 'like', '%' . $request->input('titlu') . '%');
-        }
-
-        $carti = $query->paginate($this->itemsPerpage);
+        $carti = ModelSolicitaAdaugare::all();
         return view("/vizualizamCereriAdaugare", compact("carti"));
     }
 }

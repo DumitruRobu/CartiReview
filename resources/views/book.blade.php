@@ -9,7 +9,7 @@
             <div>
                 <p><b>Titlul:</b> {{$book->titlu}}</p>
                 <p><b>Autor:</b> {{$book->autor}}</p>
-                <p><b>Gen: </b>{{$genulCartii}}</p>
+                <p><b>Gen: </b>{{$book->genre->gen}}</p>
                 <p><b>Descriere:</b> {{$book->descriere}}</p>
 
 
