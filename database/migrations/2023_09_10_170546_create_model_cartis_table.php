@@ -25,8 +25,6 @@ return new class extends Migration
             $table->text("descriere");
             $table->timestamps();
 
-
-
         });
     }
 

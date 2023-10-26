@@ -21,7 +21,7 @@ class StoreRequestedBookController extends BaseController
         unset($data["id"]);
         $book = ModelCarti::firstOrCreate($data);
         $idulCartiiNoiCreate = $book->id;
-       // return view("/book",compact("book"));
+
         return redirect()->route("ShowBook", ["id"=>$idulCartiiNoiCreate]);
     }
 }

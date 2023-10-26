@@ -24,9 +24,7 @@ Route::get('/books/{id}', "App\Http\Controllers\AllControllers\ShowBookControlle
 
 Route::group(['namespace' => 'App\Http\Controllers\AllControllers',  'middleware'=>'users'], function() {
 
-
     Route::post('/books', "StoreController")->name("StoreBooks");
-
     Route::get('/books/{id}/edit', "EditBookController")->name("EditBook")->middleware('admin');
     Route::patch('/books/{id}', "UpdateBookController")->name("UpdateBook")->middleware('admin');;
     Route::delete('/books/{id}', "DeleteBookController")->name("DeleteBook")->middleware('admin');;
